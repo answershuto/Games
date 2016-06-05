@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+<html lang="zh-CN"> 
+<head> 
+  <title>贪吃蛇</title> 
+
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  	<meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no" />
+  	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+	<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<link href="css/common.css" rel="stylesheet" type="text/css">
+</head>
+
+<body> 
+	<div class="container">
+		<div class="center-block ui-div-button">
+			<button id="RetroSnakerBeginGame" type="button" class="btn btn-success center-block ui-width130">开始游戏</button>
+			<button id="RetroSnakerBeginAndStop" type="button" disabled class="btn btn-default center-block ui-width130">暂停</button>
+		</div>
+	</div>
+
+	<div class="container">
+		<div id="RetroSnakerBackground" class="center-block">
+			<canvas id="RetroSnakerCanvas" class="center-block"></canvas>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="center-block ui-width200">
+			<button id="RetroSnakerUp" class="center-block btn btn-success glyphicon glyphicon-arrow-up">️</button>
+			<div class="center-block ui-width150">
+				<button id="RetroSnakerLeft" class="btn btn-success glyphicon glyphicon-arrow-left">️</button>
+				<button id="RetroSnakerRight" class="btn btn-success glyphicon glyphicon-arrow-right">️</button>
+			</div>
+			
+			<button id="RetroSnakerDown" class="center-block btn btn-success glyphicon glyphicon-arrow-down">️️</button>
+		</div>
+	</div>
+
+</div>
+
+</body>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/RetroSnaker.js"></script>
+</html>
+
+
+
+

@@ -1,0 +1,31 @@
+.ui-width100{width:100px;}
+.ui-width130{width:130px;}
+.ui-width140{width:140px;}
+.ui-width150{width:150px;}
+.ui-width160{width:160px;}
+.ui-width200{width:200px;}
+
+.ui-div-button button{
+	margin-top: 5px;
+}
+
+body div{
+	margin-top: 5px;
+}
+
+#RetroSnakerCanvas{
+	height: 280px;
+	width: 280px;
+}
+
+#RetroSnakerUp{
+	display: block;
+}
+
+#RetroSnakerLeft{
+	float: left;
+}
+
+#RetroSnakerRight{
+	float: right;
+}
