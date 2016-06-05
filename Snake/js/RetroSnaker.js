@@ -185,10 +185,10 @@
 	Snake.prototype.isAccelerate = function(score){
 		if (parseInt(score/3+1) != this.speed) {
 			this.speed = parseInt(score/3+1);
-		};
 
-		this.stop();
-		this.start();
+			this.stop();
+			this.start();
+		};
 	}
 
 	Snake.prototype.changeDirection = function(direction){
