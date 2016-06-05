@@ -98,10 +98,30 @@
 	}
 
 	food.prototype.createFood = function(){
-		this.food = {};
-		this.food.x = Random(29);
-		this.food.y = Random(29);
+		this.food = this.randomFood();
+		while (this.isSnakeBody(this.food)) {
+			this.food = this.randomFood();
+		};
 		Dom().renderFood(this.food);
+	}
+
+	food.prototype.randomFood = function(){
+		var food = {};
+		food.x = Random(29);
+		food.y = Random(29);
+
+		return food; 
+	}
+
+	food.prototype.isSnakeBody = function(data){
+		var bRet = false;
+		$.each(self.SnakeObj.getBody(),function(index,item){
+			if (data.x == item.x && data.y == item.y) {
+				bRet = true;
+			};
+		}.bind(this))
+
+		return bRet;
 	}
 
 	food.prototype.isBeEat = function(data){
@@ -145,6 +165,10 @@
 		this.body.attach('unshift',this.food.isBeEat.bind(this.food));
 		this.body.attach('pop',this.food.isLonger.bind(this.food));
 		this.render();
+	}
+
+	Snake.prototype.getBody = function(){
+		return this.body.getBody();
 	}
 
 	Snake.prototype.render = function(){
