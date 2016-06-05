@@ -8,6 +8,6 @@ excerpt:  分享一些自己用js以及html5写的小游戏
 贪吃蛇
 =======
 
->>![img](/img/snake1.png)
+>>![img](./img/snake1.png)
 
->>![img](/img/snake2.png) 
+>>![img](./img/snake2.png) 
