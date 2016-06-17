@@ -1,0 +1,17 @@
+#gameBackground{
+	background-image: url("../image/background.jpeg");
+	width: 100%;
+	height: 100%;
+	position:absolute; 
+	left:0px;
+	top:0px;
+}
+
+#player{
+	width: 10px;
+	height: 10px;
+	background-color: red;
+	position:absolute;
+	left: 50%;
+	top: 50%;
+}
