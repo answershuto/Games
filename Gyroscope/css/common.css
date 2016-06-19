@@ -10,8 +10,15 @@
 #player{
 	width: 10px;
 	height: 10px;
-	background-color: red;
+	background-color: green;
 	position:absolute;
 	left: 50%;
 	top: 50%;
+}
+
+.attacker{
+	width: 3px;
+	height: 3px;
+	background-color: red;
+	position: absolute;
 }
