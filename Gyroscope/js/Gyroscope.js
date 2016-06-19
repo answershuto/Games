@@ -3,10 +3,16 @@
 	var config = {
 		sensitivity:20,  		/*调整区块的灵敏度*/
 		refreshFrequency:30,    /*刷新区块的频率*/
-		attackerTimer:200,			/*攻击者再次渲染间隔的定时器事件*/
-		attackerMovePX:2,			/*每次进入定时器攻击者总共移动的距离*/
-		maxAttacker:70			/*攻击者的最大数目*/
+		attackerTimer:200,			/*攻击者再次渲染间隔的定时器时间*/
+		attackerMovePX:1,			/*每次进入定时器攻击者总共移动的距离*/
+		maxAttacker:70,			/*攻击者的最大数目*/
+		number:10 				/*每秒产生的攻击者的数目*/
 	}
+
+	var score = 0;
+	setInterval(function(){
+		score++;
+	},1000);
 
 	/*陀螺仪事件*/
 	var beta,gamma;
@@ -138,22 +144,39 @@
 				this.self.detach();
 				return;
 			};
+
+			var playerHight = $('#player').height();
+			var playerWidth = $('#player').width();
+			var playerLeft = $('#player').position().left;
+			var playerTop = $('#player').position().top;
+			var width = this.self.width();
+			var height = this.self.height();
+			if (left>=playerLeft&&((left+width)<=(playerLeft+playerWidth))
+				&&top>=playerTop&&(top+width)<=(playerTop+playerHight)) {
+				alert('游戏结束，\n您的得分为'+score+". ");
+				newGame();
+			};
 		}.bind(this),config.attackerTimer)
 
 		$('#gameBackground').append(this.self);
 	}
 
-	var player = new Player();
-	player.start();
+	function newGame(){
+		$('#gameBackground').html('');
 
-	setInterval(function(){
-		if ($('#gameBackground').children().length > config.maxAttacker) return;
-		
-		console.log($('#gameBackground').children().length)
-		for(var i=0;i<10;i++){
-			new attacker();
-		}
-	},1000)
+		var player = new Player();
+		player.start();
+
+		setInterval(function(){
+			if ($('#gameBackground').children().length > config.maxAttacker) return;
+
+			for(var i=0;i<config.number;i++){
+				new attacker();
+			}
+		},1000)
+	}
+
+	newGame();
 	
 	
 })();
